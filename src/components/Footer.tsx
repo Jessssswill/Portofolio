@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="wrap mono">
         <span>
-          © {new Date().getFullYear()} {profile.name}. Built with Next.js, set in Newsreader and IBM Plex Mono.
+          © {new Date().getFullYear()} {profile.name}. Built with Next.js, set in Schibsted Grotesk and Martian Mono.
         </span>
         <PageWeight />
       </div>

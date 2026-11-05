@@ -34,7 +34,7 @@ Taruh di folder `public/`, lalu build ulang. Kalau filenya nggak ada, bagiannya 
 | Taruh di | Hasilnya |
 | --- | --- |
 | `public/cv.pdf` | Link "CV" muncul di header, intro, dan Contact |
-| `public/me.jpg` (atau `.png` / `.webp`) | Foto muncul di bagian About, rasio 4:5 |
+| `public/me.jpg` (atau `.png` / `.webp`) | Foto kamu di bagian About, tampil utuh sesuai bentuk fotonya (nggak di-crop) |
 | `public/work/playhub/01-lobby.png` | Galeri screenshot di halaman case study PlayHub |
 
 Nama file screenshot jadi caption: `02-game-room.png` tampil sebagai "Game room". Angka di depan cuma buat urutan. Slug yang dipakai: `playhub`, `okachu`, `trisenpai`, `splitit`.
@@ -55,7 +55,7 @@ src/
   components/     header, footer, kartu project
     figures/      diagram interaktif tiap project
   data/           semua teks
-  fonts/          Newsreader + IBM Plex Mono (self-host, lisensi OFL ada di folder ini)
+  fonts/          Schibsted Grotesk + Martian Mono (self-host, lisensi OFL ada di folder ini)
   lib/            helper Hilbert curve, deteksi file di public/, base URL
 ```
 
@@ -63,7 +63,7 @@ src/
 
 - Nggak ada library animasi, 3D, atau UI kit. Semua animasi CSS (cuma transform dan opacity), ditambah satu IntersectionObserver buat reveal pas scroll.
 - Animasi otomatis mati kalau pengunjung nyalain "reduce motion" di HP/laptopnya.
-- Font di-host sendiri, cuma 3 file (sekitar 88 KB) yang di-preload. Italic baru diunduh kalau dipakai.
+- Font di-host sendiri, cuma 2 file (sekitar 70 KB) yang di-preload. Italic baru diunduh kalau dipakai.
 - Tiap diagram di-hydrate terpisah (Suspense), jadi main thread nggak ke-block lama.
 - Lighthouse mobile (simulasi HP pelan) waktu dicek: Performance sekitar 90 sampai 93, Accessibility 100, Best Practices 100, SEO 100.
 

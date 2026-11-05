@@ -4,7 +4,7 @@ import { join, extname, basename } from "node:path";
 // Files Will can drop into /public without touching code. Everything here runs
 // at build time, so the site stays fully static.
 //   public/cv.pdf                 -> "CV" links appear
-//   public/me.jpg (or .png/.webp) -> portrait in the About section
+//   public/me.jpg (or .png/.webp) -> photo in the About section
 //   public/work/<slug>/*.png|jpg  -> screenshot gallery on that case study
 
 const PUBLIC = join(process.cwd(), "public");
@@ -13,10 +13,14 @@ export function publicFile(name: string): string | null {
   return existsSync(join(PUBLIC, name)) ? `/${name}` : null;
 }
 
-export function findPortrait(): string | null {
+export type Portrait = { src: string; width: number; height: number };
+
+export function findPortrait(): Portrait | null {
   for (const ext of ["jpg", "jpeg", "png", "webp"]) {
-    const hit = publicFile(`me.${ext}`);
-    if (hit) return hit;
+    const src = publicFile(`me.${ext}`);
+    if (!src) continue;
+    const size = imageSize(join(PUBLIC, `me.${ext}`));
+    if (size) return { src, ...size };
   }
   return null;
 }

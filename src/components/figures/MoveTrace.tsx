@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import { useFirstView } from "@/lib/useFirstView";
 
 // Fig: PlayHub. A move walks the same path it takes in the NestJS backend.
@@ -336,7 +336,7 @@ export function MoveTrace() {
               return (
                 <li key={s.call} className={`step ${cls}`} data-layer={s.layer}>
                   <span className={`dot l-${s.layer.toLowerCase()}`} />
-                  <span className="call">{s.call}</span>
+                  <span className="call">{breakAfterDots(s.call)}</span>
                   {s.pattern ? <span className="pat">{s.pattern}</span> : <span />}
                 </li>
               );
@@ -355,4 +355,19 @@ export function MoveTrace() {
       </div>
     </div>
   );
+}
+
+// "TicTacToeGame.executeTurn()" may wrap after the dot, never inside a name.
+function breakAfterDots(call: string) {
+  const parts = call.split(".");
+  return parts.map((part, i) => (
+    <Fragment key={i}>
+      {part}
+      {i < parts.length - 1 && (
+        <>
+          .<wbr />
+        </>
+      )}
+    </Fragment>
+  ));
 }

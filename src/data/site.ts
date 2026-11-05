@@ -102,7 +102,7 @@ export const projects: Project[] = [
     title: "Trisenpai",
     line: "A paid coding bootcamp for first-year students, started with two friends.",
     short: "Paid C bootcamp I started",
-    proof: "Founder · ~20 paying students · 17 sessions",
+    proof: "Founder · ~20 students · 17 sessions",
     year: "2025",
     context: "Student business",
     role: "Founder and lead instructor",

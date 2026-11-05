@@ -1,4 +1,5 @@
 import { Fragment, type CSSProperties } from "react";
+import Image from "next/image";
 import { about, contact, experience, intro, otherWork, profile, projects, tools } from "@/data/site";
 import { findPortrait, publicFile } from "@/lib/assets";
 import { Rich } from "@/components/Rich";
@@ -132,9 +133,15 @@ export default function Home() {
           <div className="about">
             <div className="about-side" data-reveal="">
               {portrait && (
-                // Plain <img>: one small local photo, sized by CSS.
-                // eslint-disable-next-line @next/next/no-img-element
-                <img className="portrait" src={portrait} alt={`Portrait of ${profile.name}`} width={600} height={750} />
+                <div className="portrait">
+                  <Image
+                    src={portrait.src}
+                    width={portrait.width}
+                    height={portrait.height}
+                    sizes="(max-width: 860px) 280px, 320px"
+                    alt={`Photo of ${profile.name}`}
+                  />
+                </div>
               )}
               <dl className="facts mono" style={{ marginTop: 0 }}>
                 <dt>Name</dt>

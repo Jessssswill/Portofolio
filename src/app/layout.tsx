@@ -7,35 +7,40 @@ import { Footer } from "@/components/Footer";
 import { RevealObserver } from "@/components/RevealObserver";
 import "./globals.css";
 
-const serif = localFont({
-  src: "../fonts/Newsreader-Variable.woff2",
-  weight: "200 800",
+// Schibsted Grotesk for everything you read, Martian Mono for small labels
+// and code. Both are variable fonts, so one file covers every weight.
+const sans = localFont({
+  src: "../fonts/SchibstedGrotesk-Variable.woff2",
+  weight: "400 900",
   style: "normal",
-  variable: "--font-serif",
+  variable: "--font-sans",
   display: "swap",
-  fallback: ["Iowan Old Style", "Palatino Linotype", "Georgia", "serif"],
-  adjustFontFallback: "Times New Roman",
+  fallback: ["Helvetica Neue", "Arial", "sans-serif"],
+  adjustFontFallback: "Arial",
 });
 
 // Italic is only used for a few words on the case studies, so it isn't
 // preloaded. The browser fetches it the first time italic text shows up.
-const serifItalic = localFont({
-  src: "../fonts/Newsreader-Variable-Italic.woff2",
-  weight: "200 800",
+const sansItalic = localFont({
+  src: "../fonts/SchibstedGrotesk-Variable-Italic.woff2",
+  weight: "400 900",
   style: "italic",
-  variable: "--font-serif-italic",
+  variable: "--font-sans-italic",
   display: "swap",
   preload: false,
-  fallback: ["Georgia", "serif"],
+  fallback: ["Arial", "sans-serif"],
 });
 
+// Martian Mono cut down to the weights the site uses (400 to 600) plus the
+// width axis from 75% to 100%. The diagrams use the narrow end so long
+// method names still fit on one line.
 const mono = localFont({
-  src: [
-    { path: "../fonts/IBMPlexMono-Regular.woff2", weight: "400", style: "normal" },
-    { path: "../fonts/IBMPlexMono-Medium.woff2", weight: "500", style: "normal" },
-  ],
+  src: "../fonts/MartianMono-Variable.woff2",
+  weight: "400 600",
+  style: "normal",
   variable: "--font-mono",
   display: "swap",
+  declarations: [{ prop: "font-stretch", value: "75% 100%" }],
   fallback: ["ui-monospace", "Menlo", "Consolas", "monospace"],
 });
 
@@ -60,8 +65,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f4f1ea" },
-    { media: "(prefers-color-scheme: dark)", color: "#141311" },
+    { media: "(prefers-color-scheme: light)", color: "#fafaf8" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f1211" },
   ],
 };
 
@@ -70,7 +75,7 @@ const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${serif.variable} ${serifItalic.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${sans.variable} ${sansItalic.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>

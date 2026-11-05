@@ -6,7 +6,7 @@ export const profile = {
   name: "Jessen William",
   shortName: "Will",
   role: "Computer Science student at BINUS University",
-  location: "Jakarta, Indonesia",
+  location: "Jakarta, Indonesia, Mandarin",
   email: "jessen.william23@gmail.com",
   github: "https://github.com/Jessssswill",
   linkedin: "https://www.linkedin.com/in/jessen-william-879785315",

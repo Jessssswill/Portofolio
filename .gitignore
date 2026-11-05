@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+.env*.local
+.vercel
+.DS_Store
+
+# backup of the old template, safe to delete
+_backup-versi-lama.zip

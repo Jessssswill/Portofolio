@@ -153,7 +153,7 @@ export default function Home() {
                 <dt>Graduating</dt>
                 <dd>2028</dd>
                 <dt>Languages</dt>
-                <dd>English, Bahasa Indonesia</dd>
+                <dd>English, Bahasa Indonesia, Mandarin</dd>
               </dl>
             </div>
             <div className="about-copy" data-reveal="" style={{ "--d": 120 } as CSSProperties}>

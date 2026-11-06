@@ -4,14 +4,14 @@
 
 export const profile = {
   name: "Jessen William",
-  shortName: "Will",
+  shortName: "Jessen",
   role: "Computer Science student at BINUS University",
-  location: "Jakarta, Indonesia, Mandarin",
+  location: "Jakarta, Indonesia",
   email: "jessen.william23@gmail.com",
   github: "https://github.com/Jessssswill",
   linkedin: "https://www.linkedin.com/in/jessen-william-879785315",
   description:
-    "Jessen William (Will), Computer Science student at BINUS University. Full-stack TypeScript with NestJS and Next.js, plus Flutter. Founder of Trisenpai. Joining the Apple Developer Academy in Bali in March 2027.",
+    "Jessen William, Computer Science student at BINUS University. Full-stack TypeScript with NestJS and Next.js, plus Flutter. Founder of Trisenpai. Joining the Apple Developer Academy in Bali in March 2027.",
 };
 
 export const intro = {
@@ -201,7 +201,7 @@ export const otherWork: OtherWork[] = [
 
 export const about = {
   paragraphs: [
-    "I'm Jessen William, but almost everyone calls me Will. I study Computer Science at BINUS University in the Software Engineering stream, and I'll graduate in 2028.",
+    "I'm Jessen William, but almost everyone calls me Jessen. I study Computer Science at BINUS University in the Software Engineering stream, and I'll graduate in 2028.",
     "Most of what I know I learned by building something for someone and finding out what breaks. Teaching at Trisenpai changed how I work. You can't explain pointers to twenty tired first-years at eight in the evening unless you really get them yourself, so now I try to understand things well enough to explain them. That's also why the projects here come with diagrams you can poke at.",
     "I live at Binus Square, BINUS's student housing in Jakarta, where I'm a floor coordinator. That means looking after the people on my floor and helping run events like Jester's Night Tricks, which brought out more than a hundred residents. Outside class I'm making a Roblox action game with three friends.",
   ],
